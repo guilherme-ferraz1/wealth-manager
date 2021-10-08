@@ -1,9 +1,10 @@
 /* eslint-disable global-require */
 import React from 'react';
-import { View } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
-import Text from './src/components/atoms/Text';
+import { NavigationContainer } from '@react-navigation/native';
+import { RootNavigator } from './src/navigators';
 
 export default function App(): JSX.Element {
   const [fontsLoaded] = useFonts({
@@ -15,8 +16,10 @@ export default function App(): JSX.Element {
     return <AppLoading />;
   }
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Avenir-Next-Regular</Text>
-    </View>
+    <SafeAreaView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <RootNavigator />
+      </NavigationContainer>
+    </SafeAreaView>
   );
 }
