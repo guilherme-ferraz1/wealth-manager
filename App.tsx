@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
+/* eslint-disable global-require */
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
+import Text from './src/components/atoms/Text';
 
-export default function App() {
+export default function App(): JSX.Element {
+  const [fontsLoaded] = useFonts({
+    'Avenir-Next-Regular': require('./src/assets/fonts/AvenirNextLTPro-Regular.ttf'),
+    'Avenir-Next-Bold': require('./src/assets/fonts/AvenirNextLTPro-Bold.ttf'),
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+      <Text>Avenir-Next-Regular</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
