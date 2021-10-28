@@ -41,6 +41,8 @@
       "@typescript-eslint/no-shadow": ["error"],
       "import/prefer-default-export": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
-      "react/jsx-props-no-spreading": 0
+      "react/jsx-props-no-spreading": 0,
+      "@typescript-eslint/explicit-module-boundary-types": "off",
+      "no-console": "off"
     }
   }
