@@ -17,7 +17,7 @@ const theme = {
     bold: 'Avenir-Next-Bold',
   },
   fontSize: {
-    large: scaleFont(22),
+    large: scaleFont(24),
     big: scaleFont(20),
     medium: scaleFont(18),
     small: scaleFont(16),
