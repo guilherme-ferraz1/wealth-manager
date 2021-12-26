@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components/native';
-import { CustomTextProps } from '.';
+import { CustomTextProps } from './types';
 import { theme } from '../../../styles';
 
 export const Text = styled.Text<CustomTextProps>`
